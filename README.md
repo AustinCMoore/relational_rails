@@ -6,8 +6,8 @@ application up and running.
  Database Design
  
  
- ![Screen Shot 2022-01-31 at 3 33 54 PM](https://user-images.githubusercontent.com/86636152/151897213-fdf2ec82-aa44-4def-a94d-64c9b0422844.png)
- 
+![Screen Shot 2022-01-31 at 6 07 56 PM](https://user-images.githubusercontent.com/86636152/151898388-a0798a6b-b6d9-4430-99b6-1104be7c183d.png)
+
 
 Things you may want to cover:
 
