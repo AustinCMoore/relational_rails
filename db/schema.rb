@@ -39,8 +39,6 @@ ActiveRecord::Schema.define(version: 2022_02_01_015658) do
     t.integer "capacity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "dock_id"
-    t.index ["dock_id"], name: "index_docks_on_dock_id"
   end
 
   create_table "fish", force: :cascade do |t|
