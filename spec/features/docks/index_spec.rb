@@ -14,11 +14,5 @@ RSpec.describe "docks index page", type: :feature do
     expect(page).to have_content(@baltimore.name)
     expect(page).to have_content(@new_york.name)
     expect(page).to have_content(@savannah.name)
-    # save_and_open_page
   end
 end
-
-#For each parent table
-#as a visitor
-#when I visit '/parents'
-#Then I see the name of each parent record in the system
