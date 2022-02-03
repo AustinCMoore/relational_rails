@@ -1,2 +1,3 @@
-class Aquarium < ApplicationRecord
+class Aquarium < ActiveRecord::Base 
+  has_many :fish
 end
