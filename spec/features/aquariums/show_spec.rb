@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'aquarium index' do
+RSpec.describe 'aquarium show ' do
 
 before(:each) do
 
@@ -9,11 +9,11 @@ before(:each) do
 @denver = Aquarium.create!(name: 'Denver Aquarium', clean: true, number_of_types: 50)
 end
 
-  scenario 'visitor sees name of each aquarium record in system' do
-    visit '/aquariums'
+  scenario 'visitor sees aquarium attributes on specific aquarium show page' do
+    visit "/aquariums/#{@shedd.id}"
 
-  expect(page).to have_content(@shedd.name)
-  expect(page).to have_content(@national.name)
-  expect(page).to have_content(@denver.name)
+    expect(page).to have_content(@shedd.name)
+    expect(page).to have_content(@shedd.clean)
+    expect(page).to have_content(@shedd.number_of_types)
   end 
-end
+end 
