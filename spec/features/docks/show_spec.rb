@@ -9,6 +9,8 @@ RSpec.describe "docks index page", type: :feature do
 
   scenario "visitor sees the parent with that id and its attributes" do
     visit "/docks/#{@baltimore.id}"
+
+    expect(current_path).to eq("/docks/#{@baltimore.id}")
     expect(page).to have_content(@baltimore.name)
     expect(page).to have_content(@baltimore.capacity)
     expect(page).to have_content(@baltimore.open)
