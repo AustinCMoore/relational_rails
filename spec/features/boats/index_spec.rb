@@ -15,5 +15,6 @@ RSpec.describe "boats index page", type: :feature do
     expect(page).to have_content(@hobie.name)
     expect(page).to have_content(@hobie.motor_powered)
     expect(page).to have_content(@hobie.crew_size)
+    save_and_open_page
   end
 end
