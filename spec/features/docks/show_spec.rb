@@ -17,8 +17,10 @@ RSpec.describe "docks show page", type: :feature do
   end
 
   scenario "visitor sees a count of that parents children" do
+    @hobie = @baltimore.boats.create!(name: 'Hobie', motor_powered: true, crew_size: 2)
+    @sea_ray = @baltimore.boats.create!(name: 'Sea Ray', motor_powered: true, crew_size: 3)
     visit "/docks/#{@baltimore.id}"
 
-    expect(page).to have_content("Baltimore Dock's boats: 2")
+    expect(page).to have_content("current boat qty: 2")
   end
 end
