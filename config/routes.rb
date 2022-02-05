@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get '/docks', to: 'docks#index'
   get '/docks/:id', to: 'docks#show'
   get '/boats', to: 'boats#index'
+  get '/boats/:id', to: 'boats#show'
 end
