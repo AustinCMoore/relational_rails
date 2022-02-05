@@ -18,3 +18,6 @@ denver = Aquarium.create!(name: 'Denver Aquarium', clean: true, number_of_types:
 baltimore = Dock.create!(name: 'Baltimore Dock', open: true, capacity: 20)
 new_york = Dock.create!(name: 'NYC Dock', open: true, capacity: 30)
 savannah = Dock.create!(name: 'Savannah Dock', open: true, capacity: 10)
+
+hobie = baltimore.boats.create!(name: 'Hobie', motor_powered: true, crew_size: 2)
+sea_ray = baltimore.boats.create!(name: 'Sea Ray', motor_powered: true, crew_size: 3)
