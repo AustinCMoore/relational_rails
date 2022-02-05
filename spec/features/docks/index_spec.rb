@@ -15,4 +15,23 @@ RSpec.describe "docks index page", type: :feature do
     expect(page).to have_content(@new_york.name)
     expect(page).to have_content(@savannah.name)
   end
+
+  scenario "visitor sees records ordered by most recent first with timestamps" do
+    visit '/docks'
+
+    within('#dock-0') do
+      expect(page).to have_content(@savannah.name)
+      expect(page).to have_content(@savannah.created_at)
+    end
+
+    within('#dock-1') do
+      expect(page).to have_content(@new_york.name)
+      expect(page).to have_content(@new_york.created_at)
+    end
+
+    within('#dock-2') do
+      expect(page).to have_content(@baltimore.name)
+      expect(page).to have_content(@baltimore.created_at)
+    end
+  end
 end

@@ -1,4 +1,6 @@
 <h1> Docks of the world</h1>
-<% @docks.each do |dock| %>
+<% @docks.recent_order.each_with_index do |dock, index| %>
+  <div id="dock-<%= index %>" >
   <h2> <%= dock.name %> </h2>
+  <h2> <%= dock.created_at %> </h2>
 <% end %>
