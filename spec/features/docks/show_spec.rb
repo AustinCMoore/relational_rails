@@ -18,7 +18,6 @@ RSpec.describe "docks show page", type: :feature do
 
   scenario "visitor sees a count of that parents children" do
     visit "/docks/#{@baltimore.id}"
-    @baltimore.count_boats
 
     expect(page).to have_content("Baltimore Dock's boats: 2")
   end

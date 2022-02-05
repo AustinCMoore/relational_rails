@@ -7,4 +7,8 @@ class Dock < ApplicationRecord
   def self.recent_order
     Dock.all.sort_by(&:created_at).reverse
   end
+
+  def count_boats
+    self.boats.count
+  end
 end
