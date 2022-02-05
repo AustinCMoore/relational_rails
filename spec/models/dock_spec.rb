@@ -10,4 +10,18 @@ RSpec.describe Dock, type: :model do
     it { should validate_presence_of :open }
     it { should validate_presence_of :capacity }
   end
+
+  describe 'instance methods' do
+    describe '#count_boats' do
+      before(:each) do
+        @baltimore = Dock.create!(name: 'Baltimore Dock', open: true, capacity: 20)
+        @hobie = @baltimore.boats.create!(name: 'Hobie', motor_powered: true, crew_size: 2)
+        @sea_ray = @baltimore.boats.create!(name: 'Sea Ray', motor_powered: true, crew_size: 3)
+      end
+
+      it "counts the number of boats a dock has" do
+        expect(@baltimore.count_boats).to eq(2)
+      end
+    end
+  end
 end
