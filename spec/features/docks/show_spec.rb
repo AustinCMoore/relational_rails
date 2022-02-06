@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "docks index page", type: :feature do
+RSpec.describe "docks show page", type: :feature do
   before(:each) do
     @baltimore = Dock.create!(name: 'Baltimore Dock', open: true, capacity: 20)
     @new_york = Dock.create!(name: 'NYC Dock', open: true, capacity: 30)
@@ -14,5 +14,13 @@ RSpec.describe "docks index page", type: :feature do
     expect(page).to have_content(@baltimore.name)
     expect(page).to have_content(@baltimore.capacity)
     expect(page).to have_content(@baltimore.open)
+  end
+
+  scenario "visitor sees a count of that parents children" do
+    @hobie = @baltimore.boats.create!(name: 'Hobie', motor_powered: true, crew_size: 2)
+    @sea_ray = @baltimore.boats.create!(name: 'Sea Ray', motor_powered: true, crew_size: 3)
+    visit "/docks/#{@baltimore.id}"
+
+    expect(page).to have_content("current boat qty: 2")
   end
 end
