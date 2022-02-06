@@ -26,4 +26,11 @@ RSpec.describe 'Docks boats index' do
     expect(page).to have_current_path('/boats')
   end
 
+  scenario "visitor clicks link and go to dock index" do
+    visit "/docks/#{@baltimore.id}/boats"
+
+    click_link('All Docks')
+    expect(page).to have_current_path('/docks')
+  end
+
 end
