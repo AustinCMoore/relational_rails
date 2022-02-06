@@ -43,6 +43,5 @@ RSpec.describe "docks show page", type: :feature do
 
     click_link('Docked Boats')
     expect(page).to have_current_path("/docks/#{@baltimore.id}/boats")
-    save_and_open_page
   end
 end
