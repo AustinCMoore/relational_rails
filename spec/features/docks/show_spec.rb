@@ -23,4 +23,11 @@ RSpec.describe "docks show page", type: :feature do
 
     expect(page).to have_content("current boat qty: 2")
   end
+
+  scenario "visitor clicks link and go to boat index" do
+    visit "/docks/#{@baltimore.id}"
+    
+    click_link('All Boats')
+    expect(page).to have_current_path('/boats')
+  end
 end

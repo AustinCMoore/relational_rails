@@ -18,4 +18,12 @@ RSpec.describe 'Docks boats index' do
     expect(page).to have_content(@sea_ray.motor_powered)
     expect(page).to have_content(@sea_ray.crew_size)
   end
+
+  scenario "visitor clicks link and go to boat index" do
+    visit "/docks/#{@baltimore.id}/boats"
+
+    click_on('All Boats')
+    expect(page).to have_current_path('/boats')
+  end
+
 end
