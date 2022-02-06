@@ -37,4 +37,12 @@ RSpec.describe "docks show page", type: :feature do
     click_link('All Docks')
     expect(page).to have_current_path('/docks')
   end
+
+  scenario "visitor clicks link and go to dock index" do
+    visit "/docks/#{@baltimore.id}"
+
+    click_link('Docked Boats')
+    expect(page).to have_current_path("/docks/#{@baltimore.id}/boats")
+    save_and_open_page
+  end
 end

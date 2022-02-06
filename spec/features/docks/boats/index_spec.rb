@@ -32,5 +32,4 @@ RSpec.describe 'Docks boats index' do
     click_link('All Docks')
     expect(page).to have_current_path('/docks')
   end
-
 end
