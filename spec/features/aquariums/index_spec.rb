@@ -18,7 +18,7 @@ end
     expect(page).to have_content(@denver.name)
 
     expect(page).to_not have_content(@shedd.clean)
-  end 
+  end
 
    scenario 'visitor sees link for fish index' do
     visit "/aquariums/"
