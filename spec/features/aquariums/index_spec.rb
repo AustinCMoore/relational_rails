@@ -18,4 +18,10 @@ end
   expect(page).to have_content(@denver.name)
   expect(page).to_not have_content(@shedd.clean)
   end 
+
+   scenario 'visitor sees link for fish index' do
+    visit "/aquariums/#{@shedd.id}"
+
+    expect(page).to have_link("View Fish")
+  end
 end

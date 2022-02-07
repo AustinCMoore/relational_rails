@@ -28,4 +28,10 @@ end
     expect(page).to have_content(@shedd.fish.count)
     expect(page).to have_content('Actual Quantity of Fish Types')
   end
+
+  scenario 'visitor sees link for fish index' do
+    visit "/aquariums/#{@shedd.id}"
+
+    expect(page).to have_link("View Fish")
+  end
 end 
