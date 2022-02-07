@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'fish index' do
+RSpec.describe 'fish show page' do
 
 before(:each) do
 @shedd = Aquarium.create!(name: 'Shedd Aquarium', clean: true, number_of_types: 100)
@@ -11,17 +11,12 @@ before(:each) do
 end
 
   scenario 'visitor sees name of each fish in system' do
-    visit '/fish'
+    visit "/fish/#{@angler.id}"
 
-  expect(current_path).to eq("/fish")
+  expect(current_path).to eq("/fish/#{@angler.id}")
   expect(page).to have_content(@angler.name)
   expect(page).to have_content(@angler.bioluminescent)
   expect(page).to have_content(@angler.quantity)
+  expect(page).to_not have_content(@bruce.name)
   end 
-
-   scenario 'visitor sees link for fish index' do
-    visit "/aquariums/#{@shedd.id}"
-
-    expect(page).to have_link("View Fish")
-  end
 end
