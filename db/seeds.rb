@@ -14,6 +14,7 @@
 shedd = Aquarium.create!(name: 'Shedd Aquarium', clean: true, number_of_types: 100)
 national = Aquarium.create!(name: 'The National Aquarium', clean: true, number_of_types: 200)
 denver = Aquarium.create!(name: 'Denver Aquarium', clean: true, number_of_types: 50)
+nyc = Aquarium.create!(name: 'New York Aquarium', clean: true, number_of_types: 150)
 
 nemo = shedd.fish.create!(name: 'Clownfish', bioluminescent: false, quantity: 70)
 dory = shedd.fish.create!(name: 'Regal Tang', bioluminescent: false, quantity: 60)
