@@ -26,8 +26,9 @@ end
   end
 
   scenario 'visitor sees link for aquarium index' do
-    visit "/aquariums/"
+    visit "/aquariums"
 
-    expect(page).to have_link("View Aquarium")
+   click_link("View Aquariums")
+   expect(current_path).to eq( "/aquariums")
   end
 end
