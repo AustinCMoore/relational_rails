@@ -34,4 +34,10 @@ end
 
     expect(page).to have_link("View Fish")
   end
+
+  scenario 'visitor sees link for aquarium index' do
+    visit "/aquariums/#{@shedd.id}"
+
+    expect(page).to have_link("View Aquariums")
+  end
 end 
