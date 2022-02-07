@@ -18,6 +18,5 @@ end
   expect(page).to have_content(@angler.bioluminescent)
   expect(page).to have_content(@angler.quantity)
   expect(page).to_not have_content(@bruce.name)
-  save_and_open_page
   end 
 end
