@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/aquariums/:aquarium_id/fish', to: 'aquarium_fish#index'
 
   get '/fish', to: 'fish#index'
+  get '/fish/:id', to: 'fish#show'
   
   get '/docks', to: 'docks#index'
   get '/docks/:id', to: 'docks#show'
