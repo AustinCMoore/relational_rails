@@ -1,9 +1,5 @@
 require 'rails_helper'
 
-# For each parent table
-# As a visitor
-# When I visit '/parents'
-# Then I see the name of each parent record in the system
 RSpec.describe 'aquarium index' do
 
 before(:each) do
@@ -16,8 +12,10 @@ end
   scenario 'visitor sees name of each aquarium record in system' do
     visit '/aquariums'
 
+  expect(current_path).to eq("/aquariums")
   expect(page).to have_content(@shedd.name)
   expect(page).to have_content(@national.name)
   expect(page).to have_content(@denver.name)
+  expect(page).to_not have_content(@shedd.clean)
   end 
 end
