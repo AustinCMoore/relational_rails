@@ -20,8 +20,15 @@ end
   end 
 
    scenario 'visitor sees link for fish index' do
-    visit "/aquariums/#{@shedd.id}"
+    visit "/fish"
 
     expect(page).to have_link("View Fish")
+  end
+
+  scenario 'visitor sees link for aquarium index' do
+    visit "/fish"
+
+    click_link("View Aquariums")
+    expect(current_path).to eq( "/aquariums")
   end
 end

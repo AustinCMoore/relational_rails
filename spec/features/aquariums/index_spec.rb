@@ -20,10 +20,17 @@ end
     expect(page).to_not have_content(@shedd.clean)
   end 
 
-  scenario 'visitor sees link for fish index' do
-    visit "/aquariums/#{@shedd.id}"
+   scenario 'visitor sees link for fish index' do
+    visit "/aquariums/"
 
     expect(page).to have_link("View Fish")
+  end
+
+  scenario 'visitor sees link for aquarium index' do
+    visit "/aquariums"
+
+   click_link("View Aquariums")
+   expect(current_path).to eq( "/aquariums")
   end
 
   scenario 'visitor sees records ordered by #created_at and timestamp' do
@@ -35,5 +42,3 @@ end
     expect(@denver.name).to appear_before(@shedd.name)
   end
 end
-
-
