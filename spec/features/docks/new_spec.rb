@@ -13,7 +13,7 @@ RSpec.describe 'New Dock' do
       expect(current_path).to eq('/docks/new')
     end
 
-    it 'can create a new dock' do
+    it 'can create a new dock and lists it on index page' do
       visit '/docks/new'
 
       fill_in('Name', with: 'Houston')
