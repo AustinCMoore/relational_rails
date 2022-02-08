@@ -1,3 +1,5 @@
+<%= link_to 'Create Boat', "/docks/#{@dock.id}/boats/new" %>
+
 <% @boats.each do |boat| %>
   <h2><%= boat.name %></h2>
   <h3><%= boat.motor_powered %></h3>
