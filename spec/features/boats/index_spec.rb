@@ -11,9 +11,9 @@ RSpec.describe "boats index page", type: :feature do
     visit '/boats'
 
     expect(current_path).to eq('/boats')
-    expect(page).to have_content(@hobie.name)
-    expect(page).to have_content(@hobie.motor_powered)
-    expect(page).to have_content(@hobie.crew_size)
+    expect(page).to have_content(@sea_ray.name)
+    expect(page).to have_content(@sea_ray.motor_powered)
+    expect(page).to have_content(@sea_ray.crew_size)
   end
 
   scenario "visitor clicks link and go to boat index" do

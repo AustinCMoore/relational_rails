@@ -1,6 +1,6 @@
 class BoatsController < ApplicationController
   def index
-    @boats = Boat.all
+    @boats = Boat.is_motor_powered
   end
 
   def show
