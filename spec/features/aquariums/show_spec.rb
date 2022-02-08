@@ -10,10 +10,11 @@ before(:each) do
 @dory = @shedd.fish.create!(name: 'Regal Tang', bioluminescent: false, quantity: 60)
 @angler = @shedd.fish.create!(name: 'Angerfish', bioluminescent: true, quantity: 20)
 @bubbles = @denver.fish.create!(name: 'Yellow Tang', bioluminescent: false, quantity: 50)
+
+ visit "/aquariums/#{@shedd.id}"
 end
 
   scenario 'visitor sees aquarium attributes on specific aquarium show page' do
-    visit "/aquariums/#{@shedd.id}"
 
     expect(current_path).to eq("/aquariums/#{@shedd.id}")
     expect(page).to have_content(@shedd.name)
@@ -23,30 +24,32 @@ end
   end 
 
   scenario 'visitor sees count of fish records associated with each aquarium' do
-    visit "/aquariums/#{@shedd.id}"
-    
+
     expect(page).to have_content(@shedd.fish.count)
     expect(page).to have_content('Actual Quantity of Fish Types')
   end
 
   scenario 'visitor sees link for fish index' do
-    visit "/aquariums/#{@shedd.id}"
 
     click_link("View Fish")
     expect(current_path).to eq( "/fish")
   end
 
   scenario 'visitor sees link for aquarium index' do
-    visit "/aquariums/#{@shedd.id}"
 
     click_link("View Aquariums")
     expect(current_path).to eq( "/aquariums")
   end 
 
   scenario 'visitor sees link to aquarium_fish index' do
-    visit "/aquariums/#{@shedd.id}"
 
     click_link "View Aquarium Fish"
     expect(current_path).to eq("/aquariums/#{@shedd.id}/fish")
   end 
+
+  scenario 'visitor sees link to update aquarium' do
+   
+    click_link "Update Aquarium"
+    expect(current_path).to eq("/aquariums/#{@shedd.id}/edit")
+  end
 end 
