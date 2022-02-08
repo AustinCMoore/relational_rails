@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   get '/aquariums', to: 'aquariums#index'
+  get '/aquariums/:id/edit', to: 'aquariums#edit'
   get '/aquariums/new', to: 'aquariums#new'
   post '/aquariums', to: 'aquariums#create'
   get 'aquariums/:id', to: 'aquariums#show'
+  patch '/aquariums/:id', to: 'aquariums#update'
+ 
   get '/aquariums/:aquarium_id/fish', to: 'aquarium_fish#index'
 
   get '/fish', to: 'fish#index'
