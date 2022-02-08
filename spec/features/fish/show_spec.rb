@@ -19,4 +19,18 @@ end
   expect(page).to have_content(@angler.quantity)
   expect(page).to_not have_content(@bruce.name)
   end 
+
+  scenario 'visitor sees link for fish index' do
+    visit "/fish/#{@angler.id}"
+
+    click_link("View Fish")
+    expect(current_path).to eq( "/fish")
+  end
+
+  scenario 'visitor sees link for aquarium index' do
+    visit "/fish/#{@angler.id}"
+
+    click_link("View Aquariums")
+    expect(current_path).to eq( "/aquariums")
+  end
 end

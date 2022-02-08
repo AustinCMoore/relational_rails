@@ -22,6 +22,19 @@ end
   expect(page).to have_content(@nemo.bioluminescent)
   expect(page).to have_content(@nemo.quantity)
   expect(page).to_not have_content(@bubbles.name)
+  end 
 
+   scenario 'visitor sees link for fish index' do
+    visit "/aquariums/#{@shedd.id}/fish"
+
+    click_link("View Fish")
+    expect(current_path).to eq( "/fish")
+  end
+
+  scenario 'visitor sees link for aquarium index' do
+    visit "/aquariums/#{@shedd.id}/fish"
+
+    click_link("View Aquariums")
+    expect(current_path).to eq( "/aquariums")
   end 
 end
