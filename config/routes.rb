@@ -9,9 +9,11 @@ Rails.application.routes.draw do
   get '/fish/:id', to: 'fish#show'
 
   get '/docks', to: 'docks#index'
+  get '/docks/:id/edit', to: 'docks#edit'
   get '/docks/new', to: 'docks#new'
   post '/docks', to: 'docks#create'
   get '/docks/:id', to: 'docks#show'
+  patch '/docks/:id', to: 'docks#update'
   get '/docks/:dock_id/boats', to: 'dock_boats#index'
 
   get '/boats', to: 'boats#index'
