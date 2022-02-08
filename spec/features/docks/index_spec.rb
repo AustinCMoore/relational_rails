@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe "docks index page", type: :feature do
   before(:each) do
     @baltimore = Dock.create!(name: 'Baltimore Dock', open: true, capacity: 20)
-    @new_york = Dock.create!(name: 'NYC Dock', open: true, capacity: 30)
+    @new_york = Dock.create!(name: 'NYC Dock', open: false, capacity: 30)
     @savannah = Dock.create!(name: 'Savannah Dock', open: true, capacity: 10)
   end
 
@@ -40,7 +40,7 @@ RSpec.describe "docks index page", type: :feature do
     click_link('All Boats')
     expect(page).to have_current_path('/boats')
   end
-  
+
   scenario "visitor clicks link and go to dock index" do
     visit '/docks'
 

@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe 'New Dock' do
   before(:each) do
     @baltimore = Dock.create!(name: 'Baltimore Dock', open: true, capacity: 20)
-    @new_york = Dock.create!(name: 'NYC Dock', open: true, capacity: 30)
+    @new_york = Dock.create!(name: 'NYC Dock', open: false, capacity: 30)
     @savannah = Dock.create!(name: 'Savannah Dock', open: true, capacity: 10)
   end
   describe 'When a visitor visits the edit dock form by clicking a link on the show' do
