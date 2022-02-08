@@ -4,4 +4,5 @@
   <li><p> Number of potential different species: <%= @aquarium.number_of_types %></p></li>
   <li><p> Actual Quantity of Fish Types: <%= @aquarium.number_of_fish %></p></li>
 </ul>
-<p><%= link_to "View Aquarium Fish", "/aquariums/#{@aquarium.id}/fish"%></p>
+<%= link_to "View Aquarium Fish", "/aquariums/#{@aquarium.id}/fish"%>
+<%= link_to "Update Aquarium", "/aquariums/#{@aquarium.id}/edit"%>
