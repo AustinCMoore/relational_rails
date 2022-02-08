@@ -13,15 +13,15 @@ RSpec.describe 'Create Child' do
       expect(current_path).to eq("/docks/#{@baltimore.id}/boats/new")
     end
 
-    # it 'can create a new dock and lists it on index page' do
-    #   visit '/docks/new'
-    #
-    #   fill_in('Name', with: 'Houston')
-    #   fill_in('Open', with: true)
-    #   fill_in('Capacity', with: 5)
-    #   click_on 'Create Dock'
-    #   expect(current_path).to eq('/docks')
-    #   expect(page).to have_content('Houston')
-    # end
+    it 'can create a new dock and lists it on index page' do
+      visit "/docks/#{@baltimore.id}/boats/new"
+
+      fill_in('Name', with: 'Tracker')
+      fill_in('motor_powered', with: true)
+      fill_in('crew_size', with: 5)
+      click_on 'Create Boat'
+      expect(current_path).to eq("/docks/#{@baltimore.id}/boats")
+      expect(page).to have_content('Tracker')
+    end
   end
 end
