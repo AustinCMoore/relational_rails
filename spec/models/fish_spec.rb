@@ -8,7 +8,7 @@ RSpec.describe Fish, type: :model do
   describe 'validations' do
     it { should validate_presence_of :name}
     it { should validate_presence_of :quantity}
-    # it { should validate_presence_of :bioluminescent}
-    # it { should allow_value(false).for(:fish) }
+    it { should allow_value(false).for(:bioluminescent) }
+    it { should allow_value(true).for(:bioluminescent) }
   end
 end
