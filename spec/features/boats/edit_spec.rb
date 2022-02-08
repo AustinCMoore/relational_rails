@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe 'Edit Child' do
   before(:each) do
     @baltimore = Dock.create!(name: 'Baltimore Dock', open: true, capacity: 20)
-    @hobie = @baltimore.boats.create!(name: 'Hobie', motor_powered: true, crew_size: 2)
+    @hobie = @baltimore.boats.create!(name: 'Hobie', motor_powered: false, crew_size: 2)
     @sea_ray = @baltimore.boats.create!(name: 'Sea Ray', motor_powered: true, crew_size: 3)
   end
   describe 'A visitor can edit a boat from its show page' do
