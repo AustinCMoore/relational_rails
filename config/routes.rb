@@ -19,5 +19,8 @@ Rails.application.routes.draw do
 
   get '/boats', to: 'boats#index'
   get '/boats/:id', to: 'boats#show'
+  get '/boats/:id/edit', to: 'boats#edit'
+  patch '/boats/:id', to: 'boats#update'
+
 
 end
