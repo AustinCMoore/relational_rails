@@ -7,8 +7,9 @@ RSpec.describe Dock, type: :model do
 
   describe 'validations' do
     it { should validate_presence_of :name }
-    it { should validate_presence_of :open }
-    # it { should validate_presence_of :capacity }
+    it { should validate_presence_of :capacity }
+    # it { should allow_value(false).for(:open)}
+    # it { should allow_value(true).for(:open)}
   end
 
   describe 'instance methods' do
