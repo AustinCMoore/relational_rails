@@ -5,7 +5,8 @@ class Dock < ApplicationRecord
   validates_presence_of :capacity
 
   def self.recent_order
-    Dock.all.sort_by(&:created_at).reverse
+    # Dock.all.sort_by(&:created_at).reverse #ruby method
+    order(created_at: :desc)
   end
 
   def count_boats

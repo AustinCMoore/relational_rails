@@ -1,5 +1,5 @@
 <h1>Aquariums!</h1>
-<% @aquariums.each do |aquarium| %>
+<% @aquariums.created_first.each do |aquarium| %>
   <h4><%= aquarium.name %></h4>
   <h4> Record Created At: <%= aquarium.created_at %></h4>
 <% end %>
