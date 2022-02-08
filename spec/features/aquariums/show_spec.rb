@@ -42,4 +42,11 @@ end
     click_link("View Aquariums")
     expect(current_path).to eq( "/aquariums")
   end 
+
+  scenario 'visitor sees link to aquarium_fish index' do
+    visit "/aquariums/#{@shedd.id}"
+
+    click_link "View Aquarium Fish"
+    expect(current_path).to eq("/aquariums/#{@shedd.id}/fish")
+  end 
 end 
