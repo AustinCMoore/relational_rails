@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   post '/docks', to: 'docks#create'
   get '/docks/:id', to: 'docks#show'
   patch '/docks/:id', to: 'docks#update'
+  delete '/docks/:id', to: 'docks#destroy'
 
   get '/docks/:dock_id/boats', to: 'dock_boats#index'
   get '/docks/:dock_id/boats/new', to: 'dock_boats#new'

@@ -2,6 +2,7 @@
 
 <h1> <%= @dock.name %> </h1>
 <p> <%= link_to "Edit #{@dock.name}", "/docks/#{@dock.id}/edit", method: :get %> </p>
+<p> <%= link_to "Delete Dock", "/docks/#{@dock.id}", method: :delete %> </p>
 <h2> open: <%= @dock.open %> </h2>
 <h2> capacity: <%= @dock.capacity %> </h2>
 <h3> current boat qty: <%= @dock.count_boats %> </h3>

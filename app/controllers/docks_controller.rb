@@ -33,4 +33,10 @@ class DocksController < ApplicationController
   def show
     @dock = Dock.find(params[:id])
   end
+
+  def destroy
+    @dock = Dock.find(params[:id])
+    @dock.destroy
+    redirect_to "/docks"
+  end
 end
