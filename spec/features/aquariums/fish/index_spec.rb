@@ -53,5 +53,11 @@ end
   scenario 'visitor sees form and completes it to see filtered results' do
     expect(page).to have_content("Only show records with more than (enter number) of fish")
     expect(page).to have_button("Submit")
+
+    fill_in('number', with: 60)
+    click_button("Submit")
+
+    expect(page).to_not have_content(@bubbles.name)
+    expect(page).to have_content(@nemo.name)
   end
 end
