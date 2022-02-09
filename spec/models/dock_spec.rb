@@ -25,4 +25,19 @@ RSpec.describe Dock, type: :model do
       end
     end
   end
+
+  describe 'class methods' do
+    describe 'self.recent_order' do
+      before(:each) do
+        @baltimore = Dock.create!(name: 'Baltimore Dock', open: true, capacity: 20)
+        @new_york = Dock.create!(name: 'NYC Dock', open: false, capacity: 30)
+        @savannah = Dock.create!(name: 'Savannah Dock', open: true, capacity: 10)
+      end
+
+      it "orders by recency" do
+        expect(Dock.all).to eq([@baltimore, @new_york, @savannah])
+        expect(Dock.recent_order).to eq([@savannah, @new_york, @baltimore])
+      end
+    end
+  end
 end
