@@ -32,4 +32,10 @@ class AquariumsController < ApplicationController
     )
     redirect_to "/aquariums/#{@aquarium.id}"
   end
+
+  def destroy
+    @aquarium = Aquarium.find(params[:id])
+    @aquarium.destroy
+    redirect_to "/aquariums"
+  end
 end
