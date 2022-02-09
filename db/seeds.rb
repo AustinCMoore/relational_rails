@@ -25,6 +25,12 @@ bloat = denver.fish.create!(name: 'Pufferfish', bioluminescent: false, quantity:
 deb = national.fish.create!(name: 'Four-Stripe Damselfish', bioluminescent: false, quantity: 30)
 gill = national.fish.create!(name: 'Moorish Idol', bioluminescent: false, quantity: 40)
 bruce = national.fish.create!(name: 'Great White Shark', bioluminescent: false, quantity: 10)
+lantern = shedd.fish.create!(name: 'Lanternfish', bioluminescent: true, quantity: 30)
+bob = national.fish.create!(name: 'Hawaiin Bobtail Squid', bioluminescent: true, quantity: 50)
+jelly = denver.fish.create!(name: 'Mauve Stinger', bioluminescent: true, quantity: 20)
+inky = nyc.fish.create!(name: 'Stauroteuthis Octopus', bioluminescent: true, quantity: 30)
+worm = nyc.fish.create!(name: 'Syllid Fireworm', bioluminescent: true, quantity: 40)
+eel = nyc.fish.create!(name: 'Gulper Eel', bioluminescent: true, quantity: 30)
 
 
 baltimore = Dock.create!(name: 'Baltimore Dock', open: true, capacity: 20)
