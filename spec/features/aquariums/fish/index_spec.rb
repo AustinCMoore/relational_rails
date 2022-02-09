@@ -11,6 +11,7 @@ before(:each) do
 @dory = @shedd.fish.create!(name: 'Regal Tang', bioluminescent: false, quantity: 60)
 @angler = @shedd.fish.create!(name: 'Angerfish', bioluminescent: true, quantity: 20)
 @bubbles = @denver.fish.create!(name: 'Yellow Tang', bioluminescent: false, quantity: 50)
+
 visit "/aquariums/#{@shedd.id}/fish"
 end
 
@@ -47,5 +48,10 @@ end
     click_link("Alphabetize Fish")
     expect(@angler.name).to appear_before(@nemo.name)
     expect(current_path).to eq("/aquariums/#{@shedd.id}/fish")
+  end
+
+  scenario 'visitor sees form and completes it to see filtered results' do
+    expect(page).to have_content("Only show records with more than (enter number) of fish")
+    expect(page).to have_button("Submit")
   end
 end
