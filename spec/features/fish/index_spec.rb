@@ -20,7 +20,7 @@ end
   expect(page).to have_content(@angler.name)
   expect(page).to have_content(@angler.bioluminescent)
   expect(page).to have_content(@angler.quantity)
-  end 
+  end
 
    scenario 'visitor sees link for fish index' do
 
@@ -44,7 +44,6 @@ end
     click_on "Delete #{@jelly.name}"
     expect(current_path).to eq("/fish")
     expect(page).to_not have_content("#{@jelly.name}")
-    end
   end
 
   scenario 'visitor sees link to edit fish info' do
