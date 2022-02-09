@@ -9,10 +9,11 @@ class DockBoatsController < ApplicationController
   end
 
   def new
+    @dock = Dock.find(params[:dock_id])
   end
 
   def create
-    @dock = Dock.first
+    @dock = Dock.find(params[:dock_id])
     @boats = @dock.boats.create(
       name: params[:name],
       motor_powered: params[:motor_powered],

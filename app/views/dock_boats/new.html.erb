@@ -1,4 +1,4 @@
-<%= form_with url: "/docks/:dock_id/boats", method: :post, local: true do |form| %>
+<%= form_with url: "/docks/#{@dock.id}/boats", method: :post, local: true do |form| %>
 <%= form.label :name %>
 <%= form.text_field :name %>
 <%= form.label :motor_powered %>
