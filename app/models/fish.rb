@@ -9,6 +9,6 @@ class Fish < ApplicationRecord
   end
 
   def self.greater_than(number)
-    where("crew_size > ?", number)
+    where("quantity > ?", number)
   end
 end 
