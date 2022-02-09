@@ -13,6 +13,7 @@ RSpec.describe "boats index page", type: :feature do
     expect(page).to have_content(@sea_ray.name)
     expect(page).to have_content(@sea_ray.motor_powered)
     expect(page).to have_content(@sea_ray.crew_size)
+    expect(page).to_not have_content(@hobie.name)
   end
 
   scenario "visitor clicks link and go to boat index" do
