@@ -20,4 +20,10 @@ class BoatsController < ApplicationController
     )
     redirect_to "/boats/#{@boat.id}"
   end
+
+  def destroy
+    @boat = Boat.find(params[:id])
+    @boat.destroy
+    redirect_to "/boats"
+  end
 end
