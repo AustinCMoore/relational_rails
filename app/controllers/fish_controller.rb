@@ -20,4 +20,10 @@ class FishController < ApplicationController
     )
     redirect_to "/fish/#{@fishies.id}"
   end
+
+  def destroy
+    @fish = Fish.find(params[:id])
+    @fish.destroy
+    redirect_to "/fish"
+  end
 end
