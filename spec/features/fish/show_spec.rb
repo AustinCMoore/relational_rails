@@ -38,4 +38,9 @@ end
     click_link("Update Fish")
     expect(current_path).to eq("/fish/#{@angler.id}/edit")
   end
+
+  scenario 'visitor sees link to delete a fish' do
+    
+    expect(page).to have_link("Delete Fish")
+  end
 end
