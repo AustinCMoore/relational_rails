@@ -37,9 +37,9 @@ RSpec.describe 'Docks boats index' do
     visit "/docks/#{@baltimore.id}/boats"
     expect(@sea_ray.name).to appear_before(@hobie.name)
 
-    click_link('Order Alphabetically')
-    
-    expect(page).to have_current_path("/docks/#{@baltimore.id}/boats")
+    click_on('Order Alphabetically')
+
+    expect(page).to have_current_path("/docks/#{@baltimore.id}/boats?sort=asc")
     expect(@hobie.name).to appear_before(@sea_ray.name)
   end
 end

@@ -7,4 +7,8 @@ class Boat < ApplicationRecord
   def self.is_motor_powered
     where(motor_powered: true)
   end
+
+  def self.alphabetize
+    order(:name)
+  end
 end
