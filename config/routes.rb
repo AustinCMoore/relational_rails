@@ -11,6 +11,8 @@ Rails.application.routes.draw do
 
   get '/fish', to: 'fish#index'
   get '/fish/:id', to: 'fish#show'
+  get '/fish/:id/edit', to: 'fish#edit'
+  patch '/fish/:id', to: 'fish#update'
 
   get '/docks', to: 'docks#index'
   get '/docks/:id/edit', to: 'docks#edit'

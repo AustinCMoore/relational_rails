@@ -1,0 +1,9 @@
+<%= form_with url: "/fish/#{@fish.id}", method: :patch, local: true do |form| %>
+<%= form.label :name %>
+<%= form.text_field :name %>
+<%= form.label :quantity %>
+<%= form.text_field :quantity %>
+<%= form.label :bioluminescent %>
+<%= form.text_field :bioluminescent %>
+<%= form.submit 'Update Fish' %>
+<% end  %>
