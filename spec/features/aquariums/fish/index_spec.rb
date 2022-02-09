@@ -40,4 +40,12 @@ end
     click_link("Create Fish")
     expect(current_path).to eq("/aquariums/#{@shedd.id}/fish/new")
   end
+
+  scenario 'visitor sees link to sort fish in alphabetical order' do
+    
+    expect(@nemo.name).to appear_before(@angler.name)
+    click_link("Alphabetize Fish")
+    expect(@angler.name).to appear_before(@nemo.name)
+    expect(current_path).to eq("/aquariums/#{@shedd.id}/fish")
+  end
 end
