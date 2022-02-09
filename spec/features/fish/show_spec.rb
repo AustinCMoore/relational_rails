@@ -8,10 +8,11 @@ before(:each) do
 @denver = Aquarium.create!(name: 'Denver Aquarium', clean: true, number_of_types: 50)
 @angler = @shedd.fish.create!(name: 'Anglerfish', bioluminescent: true, quantity: 10)
 @bruce = @national.fish.create!(name: 'Great White Shark', bioluminescent: false, quantity: 10)
+
+visit "/fish/#{@angler.id}"
 end
 
   scenario 'visitor sees name of each fish in system' do
-    visit "/fish/#{@angler.id}"
 
   expect(current_path).to eq("/fish/#{@angler.id}")
   expect(page).to have_content(@angler.name)
@@ -21,16 +22,20 @@ end
   end 
 
   scenario 'visitor sees link for fish index' do
-    visit "/fish/#{@angler.id}"
 
     click_link("View Fish")
     expect(current_path).to eq( "/fish")
   end
 
   scenario 'visitor sees link for aquarium index' do
-    visit "/fish/#{@angler.id}"
 
     click_link("View Aquariums")
     expect(current_path).to eq( "/aquariums")
+  end
+
+   scenario 'visitor sees link to update fish record' do
+    
+    click_link("Update Fish")
+    expect(current_path).to eq("/fish/#{@angler.id}/edit")
   end
 end
