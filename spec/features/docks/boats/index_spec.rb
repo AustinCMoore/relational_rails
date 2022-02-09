@@ -52,15 +52,15 @@ RSpec.describe 'Docks boats index' do
 
   scenario "visitor fills form and returns to filtered index" do
     visit "/docks/#{@baltimore.id}/boats"
+    save_and_open_page
     expect(page).to have_content(@hobie.name)
     expect(page).to have_content(@sea_ray.name)
 
     fill_in('crew_size', with: 2)
-    click_link("Only return records with more than number of crew size")
+    click_on("of crew size")
 
     expect(page).to have_current_path("/docks/#{@baltimore.id}/boats")
     expect(page).to_not have_content(@hobie.name)
     expect(page).to have_content(@sea_ray.name)
-
   end
 end
