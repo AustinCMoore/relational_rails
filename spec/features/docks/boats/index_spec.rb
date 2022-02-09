@@ -42,4 +42,11 @@ RSpec.describe 'Docks boats index' do
     expect(page).to have_current_path("/docks/#{@baltimore.id}/boats?sort=asc")
     expect(@hobie.name).to appear_before(@sea_ray.name)
   end
+
+  scenario "visitor clicks link and edits that childs info" do
+    visit "/docks/#{@baltimore.id}/boats"
+
+    click_link("Edit #{@sea_ray.name}")
+    expect(page).to have_current_path("/boats/#{@sea_ray.id}/edit")
+  end
 end

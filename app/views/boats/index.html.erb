@@ -4,4 +4,5 @@
   <h2> <%= boat.name %> </h2>
   <h3> <%= boat.motor_powered %> </h3>
   <h3> <%= boat.crew_size %> </h3>
+  <h3><%= link_to "Edit #{boat.name}", "/boats/#{boat.id}/edit" %></h3>
 <% end %>

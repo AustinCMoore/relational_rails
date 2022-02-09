@@ -41,4 +41,11 @@ RSpec.describe "boats index page", type: :feature do
     expect(page).to have_content(@sea_ray.motor_powered)
     expect(page).to have_content(@sea_ray.crew_size)
   end
+
+  scenario "visitor clicks link and edits that childs info" do
+    visit "/boats"
+
+    click_link("Edit #{@sea_ray.name}")
+    expect(page).to have_current_path("/boats/#{@sea_ray.id}/edit")
+  end
 end
