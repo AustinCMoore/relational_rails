@@ -3,4 +3,8 @@ class Fish < ApplicationRecord
   validates_presence_of :name
   validates :bioluminescent, inclusion: [true, false]
   validates_presence_of :quantity
-end
+
+  def self.alphabetize
+    order(:name)
+  end
+end 
