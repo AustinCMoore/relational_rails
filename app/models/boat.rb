@@ -13,7 +13,6 @@ class Boat < ApplicationRecord
   end
 
   def self.greater_than(number)
-    # binding.pry
     where("crew_size > ?", number)
   end
 end
