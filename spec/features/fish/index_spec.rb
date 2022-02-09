@@ -40,6 +40,13 @@ end
     expect(page).to_not have_content(@bruce.name)
   end
 
+  scenario 'visitor sees link to delete fish record' do
+    click_on "Delete #{@jelly.name}"
+    expect(current_path).to eq("/fish")
+    expect(page).to_not have_content("#{@jelly.name}")
+    end
+  end
+
   scenario 'visitor sees link to edit fish info' do
 
     expect(current_path).to eq("/fish")
