@@ -6,5 +6,11 @@
     <li><p> Quantity: <%= fish.quantity  %></p></li>
 </ul>
   <% end %>
+
+<%= form_with url: "/aquariums/#{@aquarium.id}/fish?sort=number" do |form| %>
+<%= form.label :number, "Only show records with more than (enter number) of fish" %>
+<%= form.text_field :number %>
+<%= form.submit "Submit" %>
+<% end %>
 <%= link_to "Create Fish", "/aquariums/#{@aquarium.id}/fish/new" %>
 <%= link_to "Alphabetize Fish", "/aquariums/#{@aquarium.id}/fish?sort=asc" %>

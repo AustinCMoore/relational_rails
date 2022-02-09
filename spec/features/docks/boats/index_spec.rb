@@ -49,4 +49,16 @@ RSpec.describe 'Docks boats index' do
     click_link("Edit #{@sea_ray.name}")
     expect(page).to have_current_path("/boats/#{@sea_ray.id}/edit")
   end
+
+  scenario "visitor fills form and returns to filtered index" do
+    visit "/docks/#{@baltimore.id}/boats"
+    expect(page).to have_content(@hobie.name)
+    expect(page).to have_content(@sea_ray.name)
+
+    fill_in('number', with: 2)
+    click_on("of crew size")
+
+    expect(page).to_not have_content(@hobie.name)
+    expect(page).to have_content(@sea_ray.name)
+  end
 end

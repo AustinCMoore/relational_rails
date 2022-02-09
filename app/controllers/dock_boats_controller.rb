@@ -2,9 +2,17 @@ class DockBoatsController < ApplicationController
   def index
     @dock = Dock.find(params[:dock_id])
     if params[:sort] == 'asc'
-      @boats = @dock.boats.alphabetize
+      if params[:number] != nil
+        @boats = @dock.boats.alphabetize.greater_than(params[:number])
+      else
+        @boats = @dock.boats.alphabetize
+      end
     else
-      @boats = @dock.boats
+      if params[:number] != nil
+        @boats = @dock.boats.greater_than(params[:number])
+      else
+        @boats = @dock.boats
+      end
     end
   end
 
