@@ -11,4 +11,9 @@ class Boat < ApplicationRecord
   def self.alphabetize
     order(:name)
   end
+
+  def self.greater_than(number)
+    # binding.pry
+    where("crew_size > ?", number)
+  end
 end
