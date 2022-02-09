@@ -5,4 +5,5 @@
   <li><p> Bioluminescent?: <%= fish.bioluminescent %> </p></li>
   <li><p> Quantity: <%= fish.quantity %> </p></li>
 </ul>
+<%= link_to "Edit #{fish.name}", "fish/#{fish.id}/edit" %>
 <% end %>

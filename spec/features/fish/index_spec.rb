@@ -39,4 +39,11 @@ end
     expect(page).to have_content(@jelly.name)
     expect(page).to_not have_content(@bruce.name)
   end
+
+  scenario 'visitor sees link to edit fish info' do
+
+    expect(current_path).to eq("/fish")
+    click_link("Edit #{@angler.name}")
+    expect(current_path).to eq("/fish/#{@angler.id}/edit")
+  end
 end
