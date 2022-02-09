@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'aquarium index' do
+RSpec.describe 'aquarium fish index' do
 
 before(:each) do
 
@@ -11,11 +11,10 @@ before(:each) do
 @dory = @shedd.fish.create!(name: 'Regal Tang', bioluminescent: false, quantity: 60)
 @angler = @shedd.fish.create!(name: 'Angerfish', bioluminescent: true, quantity: 20)
 @bubbles = @denver.fish.create!(name: 'Yellow Tang', bioluminescent: false, quantity: 50)
-
+visit "/aquariums/#{@shedd.id}/fish"
 end
 
   scenario 'visitor sees name of each fish associated with a particular aquarium' do
-    visit "/aquariums/#{@shedd.id}/fish"
 
   expect(current_path).to eq("/aquariums/#{@shedd.id}/fish")
   expect(page).to have_content(@nemo.name)
@@ -25,16 +24,20 @@ end
   end 
 
    scenario 'visitor sees link for fish index' do
-    visit "/aquariums/#{@shedd.id}/fish"
 
     click_link("View Fish")
     expect(current_path).to eq( "/fish")
   end
 
   scenario 'visitor sees link for aquarium index' do
-    visit "/aquariums/#{@shedd.id}/fish"
 
     click_link("View Aquariums")
     expect(current_path).to eq( "/aquariums")
   end 
+
+  scenario 'visitor sees link to add new fish' do
+    
+    click_link("Create Fish")
+    expect(current_path).to eq("/aquariums/#{@shedd.id}/fish/new")
+  end
 end
