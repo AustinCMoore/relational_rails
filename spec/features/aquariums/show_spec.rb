@@ -52,4 +52,9 @@ end
     click_link "Update Aquarium"
     expect(current_path).to eq("/aquariums/#{@shedd.id}/edit")
   end
+
+  scenario 'visitor sees link to delete an aquarium' do
+    
+    expect(page).to have_link("Delete Aquarium")
+  end
 end 
