@@ -1,0 +1,9 @@
+<%= form_with url: "/aquariums/#{@aquarium.id}", method: :patch, local: true do |form| %>
+<%= form.label :name %>
+<%= form.text_field :name %>
+<%= form.label :number_of_types %>
+<%= form.text_field :number_of_types %>
+<%= form.label :clean %>
+<%= form.text_field :clean %>
+<%= form.submit 'Update Aquarium' %>
+<% end  %>
