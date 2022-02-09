@@ -52,4 +52,4 @@ end
     click_link("Edit #{@angler.name}")
     expect(current_path).to eq("/fish/#{@angler.id}/edit")
   end
-end
+end 
