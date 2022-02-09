@@ -3,7 +3,10 @@ Rails.application.routes.draw do
   get '/aquariums/new', to: 'aquariums#new'
   post '/aquariums', to: 'aquariums#create'
   get 'aquariums/:id', to: 'aquariums#show'
+  
   get '/aquariums/:aquarium_id/fish', to: 'aquarium_fish#index'
+  get '/aquariums/:aquarium_id/fish/new', to: 'aquarium_fish#new'
+  post '/aquariums/:aquarium_id/fish', to: 'aquarium_fish#create'
 
   get '/fish', to: 'fish#index'
   get '/fish/:id', to: 'fish#show'
