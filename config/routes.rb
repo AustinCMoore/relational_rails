@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   post '/aquariums', to: 'aquariums#create'
   get 'aquariums/:id', to: 'aquariums#show'
   patch '/aquariums/:id', to: 'aquariums#update'
+  delete '/aquariums/:id', to: 'aquariums#destroy'
+
   get '/aquariums/:aquarium_id/fish', to: 'aquarium_fish#index'
   get '/aquariums/:aquarium_id/fish/new', to: 'aquarium_fish#new'
   post '/aquariums/:aquarium_id/fish', to: 'aquarium_fish#create'
