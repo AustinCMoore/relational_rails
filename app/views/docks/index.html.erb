@@ -5,5 +5,6 @@
   <div id="dock-<%= index %>" >
   <h2> <%= dock.name %> </h2>
   <h2> <%= dock.created_at %> </h2>
-  <h3> <%= link_to "Edit #{dock.name}", "/docks/#{dock.id}/edit" %>
+  <h3> <%= link_to "Edit #{dock.name}", "/docks/#{dock.id}/edit" %> </h3>
+  <h3> <%= link_to "Delete #{dock.name}", "/docks/#{dock.id}", method: :delete %> </h3>
 <% end %>
