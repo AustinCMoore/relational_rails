@@ -4,3 +4,4 @@
   <li><p> Quantity: <%= @fish.quantity %></p></li>
 </ul>
 <%= link_to "Update Fish", "/fish/#{@fish.id}/edit" %>
+<%= link_to "Delete Fish", "/fish/#{@fish.id}", method: :delete %>
