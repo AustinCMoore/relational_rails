@@ -30,4 +30,6 @@ Rails.application.routes.draw do
   get '/boats/:id', to: 'boats#show'
   get '/boats/:id/edit', to: 'boats#edit'
   patch '/boats/:id', to: 'boats#update'
+  delete '/boats/:id', to: 'boats#destroy'
+
 end
