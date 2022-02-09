@@ -1,4 +1,5 @@
 <%= link_to 'Create Boat', "/docks/#{@dock.id}/boats/new" %>
+<%= link_to 'Order Alphabetically', "/docks/#{@dock.id}/boats?sort=asc" %>
 
 <% @boats.each do |boat| %>
   <h2><%= boat.name %></h2>

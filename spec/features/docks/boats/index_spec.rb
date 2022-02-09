@@ -3,8 +3,8 @@ require "rails_helper"
 RSpec.describe 'Docks boats index' do
   before(:each) do
     @baltimore = Dock.create!(name: 'Baltimore Dock', open: true, capacity: 20)
-    @hobie = @baltimore.boats.create!(name: 'Hobie', motor_powered: false, crew_size: 2)
     @sea_ray = @baltimore.boats.create!(name: 'Sea Ray', motor_powered: true, crew_size: 3)
+    @hobie = @baltimore.boats.create!(name: 'Hobie', motor_powered: false, crew_size: 2)
   end
 
   scenario "visitor sees boats associated w that dock w each boats attributes" do
@@ -31,5 +31,15 @@ RSpec.describe 'Docks boats index' do
 
     click_link('All Docks')
     expect(page).to have_current_path('/docks')
+  end
+
+  scenario "visitor clicks link and sorts in alphabetical order" do
+    visit "/docks/#{@baltimore.id}/boats"
+    expect(@sea_ray.name).to appear_before(@hobie.name)
+
+    click_on('Order Alphabetically')
+
+    expect(page).to have_current_path("/docks/#{@baltimore.id}/boats?sort=asc")
+    expect(@hobie.name).to appear_before(@sea_ray.name)
   end
 end

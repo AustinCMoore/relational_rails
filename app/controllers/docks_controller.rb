@@ -4,7 +4,7 @@ class DocksController < ApplicationController
   end
 
   def new
-
+    # @dock = Dock.find(params[:id])
   end
 
   def create
