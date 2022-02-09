@@ -1,6 +1,6 @@
 class FishController < ApplicationController
   def index
-    @fishies = Fish.all
+    @fishies = Fish.where(bioluminescent: true)
   end
 
   def show
