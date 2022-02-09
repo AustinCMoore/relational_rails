@@ -43,7 +43,6 @@ end
   scenario 'visitor sees link to edit aquarium info' do
 
     expect(current_path).to eq("/aquariums")
-    save_and_open_page
     click_link("Edit #{@shedd.name}")
     expect(current_path).to eq("/aquariums/#{@shedd.id}/edit")
   end
