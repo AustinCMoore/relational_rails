@@ -6,6 +6,7 @@ RSpec.describe 'Create Child' do
     @hobie = @baltimore.boats.create!(name: 'Hobie', motor_powered: false, crew_size: 2)
     @sea_ray = @baltimore.boats.create!(name: 'Sea Ray', motor_powered: true, crew_size: 3)
   end
+  
   describe 'A visitor can add a new boat to the dock boats index' do
     it 'links to the new page from the docks boats index' do
       visit "/docks/#{@baltimore.id}/boats"
