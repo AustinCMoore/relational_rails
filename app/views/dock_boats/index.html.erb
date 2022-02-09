@@ -1,9 +1,16 @@
 <%= link_to 'Create Boat', "/docks/#{@dock.id}/boats/new" %>
 <%= link_to 'Order Alphabetically', "/docks/#{@dock.id}/boats?sort=asc" %>
 
+<%= form_with url: "/docks/#{@dock.id}/boats?sort=number", method: :get, local: true do |form| %>
+<%= form.label :number, "Only return records with more than" %>
+<%= form.text_field :number %>
+<%= form.submit "of crew size" %>
+<% end %>
+
 <% @boats.each do |boat| %>
   <h2><%= boat.name %></h2>
   <h3><%= boat.motor_powered %></h3>
   <h3><%= boat.crew_size %></h3>
   <h3><%= link_to "Edit #{boat.name}", "/boats/#{boat.id}/edit" %></h3>
+  <h3> <%= link_to "Delete #{boat.name}", "/boats/#{boat.id}", method: :delete %> </h3>
 <% end %>

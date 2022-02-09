@@ -6,4 +6,5 @@
   <li><p> Quantity: <%= fish.quantity %> </p></li>
 <%= link_to "Delete #{fish.name}", "/fish/#{fish.id}", method: :delete %>
 </ul>
+<%= link_to "Edit #{fish.name}", "fish/#{fish.id}/edit" %>
 <% end %>
